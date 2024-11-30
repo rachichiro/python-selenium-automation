@@ -29,3 +29,6 @@ actual_result = driver.find_element(By.XPATH, "//*[text()='Sign into your Target
 
 assert expected_result in actual_result, f'Expected text {expected_result} not in actual {actual_result}'
 print('Test case passed')
+sleep(2)
+
+driver.find_element(By.ID,'login')
