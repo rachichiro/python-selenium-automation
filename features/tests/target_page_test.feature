@@ -1,6 +1,6 @@
 # Created by rachael at 12/7/24
 Feature: Target Page Tests
-  Check different functions and buttons on Target page.
+  #Check different functions and buttons on Target page.
 
   Scenario: Verify shopping cart is empty
     Given Open Target Page
@@ -12,3 +12,4 @@ Feature: Target Page Tests
    When Click Sign In
    Then Click Sign In from Navigation Menu
    Then Verify Sign In form opened
+
