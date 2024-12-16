@@ -2,6 +2,9 @@ from selenium.webdriver.common.by import By
 from behave import given, when, then
 from time import sleep
 
+SEARCH_FIELD = (By.ID, 'search')
+SEARCH_BUTTON = (By.XPATH,"//button[@data-test='@web/Search/SearchButton']")
+
 
 
 @then('Verify “Cart is Empty” message is shown')
@@ -22,8 +25,8 @@ def verify_sign_in(context):
 
 @when('Search for {drink}')
 def search_drink(context,drink):
-    context.driver.find_element(By.ID, 'search').send_keys(drink)
-    context.driver.find_element(By.XPATH,"//button[@data-test='@web/Search/SearchButton']").click()
+    context.driver.find_element(*SEARCH_FIELD).send_keys(drink)
+    context.driver.find_element(*SEARCH_BUTTON).click()
 
 
 @then('Verify search results show {expected_result}')

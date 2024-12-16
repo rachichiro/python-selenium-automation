@@ -1,5 +1,7 @@
 from selenium import webdriver
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.support.wait import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 
 
@@ -10,9 +12,9 @@ def browser_init(context):
     driver_path = ChromeDriverManager().install()
     service = Service(driver_path)
     context.driver = webdriver.Chrome(service=service)
-
     context.driver.maximize_window()
-    context.driver.implicitly_wait(4)
+    context.driver.implicitly_wait(5)
+    context.driver.wait = WebDriverWait(context.driver, 15)
 
 
 def before_scenario(context, scenario):
