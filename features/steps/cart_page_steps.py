@@ -20,7 +20,6 @@ def verify_cart_items(context, amount):
     cart_summary = context.driver.find_element(By.XPATH, "//div[./span[contains(text(), 'subtotal')]]").text
     assert f'{amount} item' in cart_summary, f"Expected {amount} items but got {cart_summary}"
 
-
 @then ('Add product to cart')
 def add_product_to_cart(context):
     context.app.cart_page.add_product_to_cart()
@@ -28,7 +27,6 @@ def add_product_to_cart(context):
 @then ('Confirm add to cart from Side Nav')
 def confirm_add_to_cart(context):
  context.driver.find_element(*ADD_TO_CART_SIDE_NAV_BTN).click()
-
 
 @then ('Verify product is in cart')
 def verify_add_to_cart(context):
@@ -54,4 +52,8 @@ def verify_product_name(context):
 @then('Verify “Cart is Empty” message is shown')
 def verify_cart_empty(context):
     context.app.cart_page.verify_cart_empty()
+
+@then ('Verify search term {product} in URL')
+def verify_search_url(context, product):
+    context.app.search_results_page.verify_search_url(product)
 

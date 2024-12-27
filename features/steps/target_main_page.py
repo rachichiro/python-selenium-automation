@@ -24,9 +24,8 @@ def click_cart(context):
 
 @then('Verify at least 1 Header Link is shown')
 def verify_header_links(context):
-    el = context.driver.find_element(By.CSS_SELECTOR, "[data-test*='@web/GlobalHeader/UtilityHeader/']")
-    print('\nFind element:')
-    print(el)
+   context.driver.find_element(By.CSS_SELECTOR, "[data-test*='@web/GlobalHeader/UtilityHeader/']")
+
 
 
 @then('Verify {expected_amount} header links are shown')

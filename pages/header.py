@@ -17,7 +17,8 @@ class Header(BasePage):
         sleep(10)
 
     def click_cart(self):
-     self.click(*self.CART_ICON)
+     #self.click(*self.CART_ICON)
+     self.wait_and_click(*self.CART_ICON)
 
     def click_sign_in(self):
         self.click(*self.SIGN_IN_BTN)

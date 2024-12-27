@@ -5,16 +5,19 @@ Feature: Tests for Product Search
     Given Open Target Page
     When Search for tea
     Then Verify search results show tea
+    Then Verify search term tea in URL
 
-  Scenario: User can search for coca cola
+  Scenario: User can search for soda
     Given Open Target Page
-    When Search for coca cola
-    Then Verify search results show coca cola
+    When Search for soda
+    Then Verify search results show soda
+    Then Verify search term soda in URL
 
   Scenario: User can search for a mug
     Given Open Target Page
     When Search for mug
     Then Verify search results show mug
+    Then Verify search term mug in URL
 
   Scenario Outline: User can search for a product
     Given Open Target Page

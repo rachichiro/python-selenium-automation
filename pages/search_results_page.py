@@ -6,5 +6,7 @@ class SearchResultsPage(BasePage):
     SEARCH_RESULTS = (By.XPATH,"//div[@data-test='resultsHeading']")
 
     def verify_search_results(self,product):
-     actual_result = self.find_element(*self.SEARCH_RESULTS).text
-     assert product in actual_result, f'Expected text{product} but got {actual_result}'
+     self.verify_partial_text(product,*self.SEARCH_RESULTS)
+
+    def verify_search_url(self, product):
+     self.verify_partial_url(product)

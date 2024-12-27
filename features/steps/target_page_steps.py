@@ -17,6 +17,6 @@ def verify_sign_in(context):
     assert expected_result in actual_result
 
 
-@then('Verify search results show {expected_result}')
-def verify_search(context,expected_result):
-   context.app.search_results_page.verify_search_results()
+@then('Verify search results show {product}')
+def verify_search_results(context,product):
+   context.app.search_results_page.verify_search_results(product)
