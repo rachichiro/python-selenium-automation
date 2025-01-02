@@ -3,6 +3,8 @@ from pages.cart_page import CartPage
 from pages.base_page import BasePage
 from pages.main_page import MainPage
 from pages.search_results_page import SearchResultsPage
+from pages.side_nav_page import SideNavPage
+from pages.sign_in_page import SignInPage
 from pages.target_app_page import TargetAppPage
 
 
@@ -16,3 +18,5 @@ class Application:
         self.main_page = MainPage(driver)
         self.search_results_page = SearchResultsPage(driver)
         self.target_app_page = TargetAppPage(driver)
+        self.side_nav_page = SideNavPage(driver)
+        self.sign_in_page = SignInPage(driver)
