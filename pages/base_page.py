@@ -1,3 +1,4 @@
+from selenium.webdriver.support.expected_conditions import all_of
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -62,10 +63,20 @@ class BasePage:
         url = self.driver.current_url
         assert expected_url == url, f'Expected URL {expected_url} does not match {url}'
 
+
     def get_current_window_handle(self):
         return self.driver.current_window_handle
 
     def switch_to_window(self):
         self.wait.until(EC.new_window_is_opened)
         all_windows = self.driver.window_handles
-        self.driver.switch_to.window(self.driver.window_handles[1])
+        print('All Windows: ', all_windows)
+        self.driver.switch_to.window(all_windows[1])
+
+    def switch_to_window_by_id(self, window_id):
+        self.driver.switch_to.window(window_id)
+        print('Current Window: ', self.driver.current_window_handle)
+
+    def close_window(self):
+        self.driver.close()
+

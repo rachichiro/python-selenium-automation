@@ -6,6 +6,7 @@ from pages.search_results_page import SearchResultsPage
 from pages.side_nav_page import SideNavPage
 from pages.sign_in_page import SignInPage
 from pages.target_app_page import TargetAppPage
+from pages.terms_condtions_page import TermsConditionsPage
 
 
 class Application:
@@ -20,3 +21,4 @@ class Application:
         self.target_app_page = TargetAppPage(driver)
         self.side_nav_page = SideNavPage(driver)
         self.sign_in_page = SignInPage(driver)
+        self.terms_conditions_page = TermsConditionsPage(driver)
